@@ -1,4 +1,8 @@
-## 0. What is Singularity?
+# Customizing Singularity Environments
+
+The definition files can be modified before you create the environments! First, let's talk a little about Singularity.
+
+## What is Singularity?
 We will be using <a href="https://singularityware.github.io">Singularity</a> containers that don't require root priviledges to run on the cluster for our environments. Further, we are going to "bootstrap" Docker images so we don't have to start from nothing! You can think of this like packaging an entire software suite (for example, python) into a container that you can then run as an executable:
 
       $ ./python3 

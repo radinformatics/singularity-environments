@@ -2,9 +2,11 @@
 
 These are base software environments for labs to use on research clusters. The general workflow is as follows:
 
+
  1. On your local machine (or an environment with sudo) build the contained environment
  2. Transfer the contained environment to your cluster
  3. Add the executable to your path, or create an alias.
+
 
 We will first be reviewing the basic steps for building and deploying the environments. 
 
@@ -15,7 +17,7 @@ You will first want to clone the repository, or if you want to modify and save y
       git clone https://www.github.com/radinformatics/singularity-environments
       cd singularity-environments
 
-You can then move right into building one or more containers, or optionally customize environments first (see [CUSTOM.md](CUSTOM.md)).
+You can then move right into building one or more containers, or optionally [customize environments first](CUSTOM.md).
 
 
 ## 1. Build the Contained Environment
