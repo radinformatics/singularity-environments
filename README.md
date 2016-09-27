@@ -11,7 +11,7 @@ These are base software environments for labs to use on research clusters. The g
 We will first be reviewing the basic steps for building and deploying the environments. 
 
 
-## 0. Setup and customize one or more environments
+## Step 0. Setup and customize one or more environments
 You will first want to clone the repository, or if you want to modify and save your definitions, fork and then clone the fork first. Here is the basic clone:
 
       git clone https://www.github.com/radinformatics/singularity-environments
@@ -20,7 +20,7 @@ You will first want to clone the repository, or if you want to modify and save y
 You can then move right into building one or more containers, or optionally [customize environments first](CUSTOM.md).
 
 
-## 1. Build the Contained Environment
+## Step 1. Build the Contained Environment
 
 First, you should use the provided build script to generate an executable for your environment:
 
@@ -32,11 +32,11 @@ This will generate a python3 executable in the present working directory. If you
 
 Note that the maximum size, if not specified, is 1024*1024BMiB.
 
-## 2. Transfer the contained environment to your cluster
+## Step 2. Transfer the contained environment to your cluster
 
 You are likely familiar with FTP, or hopefully your cluster uses a secure file transfer (sFTP). You can also use a command line tool [scp](https://www.garron.me/en/articles/scp.html). For the Sherlock cluster at Stanford, since I use Linux (Ubuntu), my preference is for [gftp](http://www.howtogeek.com/howto/ubuntu/install-and-use-the-gftp-client-on-ubuntu-linux/).
 
-## 3. Add the executable to your path
+## Step 3. Add the executable to your path
 
 Let's say we are working with a python3 image, and we want this executable to be called before the python3 that is installed on our cluster. We need to either add this python3 to our path (BEFORE the old one) or create an alias. 
 
