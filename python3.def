@@ -1,0 +1,14 @@
+Bootstrap: docker
+From: python:3.5
+
+%runscript
+
+    /usr/local/bin/python
+
+
+%post
+
+    apt-get update
+    apt-get install -y vim
+    mkdir -p /scratch
+    mkdir -p /local-scratch
