@@ -66,4 +66,4 @@ For both of the above, you should test to make sure you are getting the right on
       /home/vsochat/env/python3
 
 
-
+The definition files in this base directory are for base (not hugey modified) environments. For examples of custom environments (those to be used by Langlotz lab) look in [custom](custom)
