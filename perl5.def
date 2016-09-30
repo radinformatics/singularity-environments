@@ -1,0 +1,15 @@
+Bootstrap: docker
+IncludeCmd: "yes"
+From: perl:5
+
+%runscript
+
+    echo "Running perl"
+    exec /usr/local/bin/perl
+
+%post
+
+    apt-get update
+    apt-get install -y vim
+    mkdir -p /scratch
+    mkdir -p /local-scratch
