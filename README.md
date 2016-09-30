@@ -67,3 +67,19 @@ For both of the above, you should test to make sure you are getting the right on
 
 
 The definition files in this base directory are for base (not hugey modified) environments. For examples of custom environments (those to be used by Langlotz lab) look in [custom](custom)
+
+
+TODO:
+
+https://hub.docker.com/_/mongo/
+https://hub.docker.com/_/mysql/
+https://hub.docker.com/_/postgres/
+https://hub.docker.com/_/node/
+https://hub.docker.com/_/rails/
+https://hub.docker.com/_/perl/
+https://hub.docker.com/_/mariadb/
+https://hub.docker.com/_/django/
+https://hub.docker.com/_/openjdk/
+https://hub.docker.com/_/r-base/
+https://hub.docker.com/_/julia/
+https://hub.docker.com/_/clojure/
