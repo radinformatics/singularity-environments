@@ -1,6 +1,6 @@
 # Singularity Environments
 
-These are base software environments for labs to use on research clusters. The general workflow is as follows:
+These are base software environments for labs to use on research clusters using <a href="https://www.github.com/gmkurtzer/singularityware" target="_blank">Singularity</a>. Note: you must download the version of Singularity (2.2) from the master branch to get this full functionality, as 2.2 has not been officially released yet. The general workflow is as follows:
 
 
  1. On your local machine (or an environment with sudo) build the contained environment
@@ -9,7 +9,6 @@ These are base software environments for labs to use on research clusters. The g
 
 
 We will first be reviewing the basic steps for building and deploying the environments. 
-
 
 ## Step 0. Setup and customize one or more environments
 You will first want to clone the repository, or if you want to modify and save your definitions, fork and then clone the fork first. Here is the basic clone:
@@ -69,17 +68,60 @@ For both of the above, you should test to make sure you are getting the right on
 The definition files in this base directory are for base (not hugey modified) environments. For examples of custom environments (those to be used by Langlotz lab) look in [custom](custom)
 
 
-TODO:
+## Modifying Environments
+Let's say you have an environment (node6, for example), and you want to install a package with npm (which is localed at /usr/local/bin/npm), but then when you run the image:
 
-https://hub.docker.com/_/mongo/
-https://hub.docker.com/_/mysql/
-https://hub.docker.com/_/postgres/
-https://hub.docker.com/_/node/
-https://hub.docker.com/_/rails/
-https://hub.docker.com/_/perl/
-https://hub.docker.com/_/mariadb/
-https://hub.docker.com/_/django/
-https://hub.docker.com/_/openjdk/
+      ./node6
+
+it takes you right into the node terminal. What gives? How do you do it? You use the Singularity shell, with write mode. We can first look at the help docs for it:
+
+
+      singularity --help shell
+      USAGE: singularity [...] shell [shell options...] <container path>
+
+      Obtain a shell (/bin/sh) within the container image.
+
+      note: When invoking a shell within a container, the container image is
+      by default writable.
+
+
+      SHELL OPTIONS:
+          -B/--bind <spec>    A user-bind path specification.  spec can either be a
+                              path or a src:dest pair, specifying the bind mount to
+                              perform (can be called multiple times)
+          -c/--contain        This option disables the automatic sharing of writable
+                              filesystems on your host (e.g. $HOME and /tmp).
+          -C/--containall     Contain not only fle systems, but also PID and IPC
+          -H/--home <path>    Path to a different home directory to virtualize within
+                              the container
+          -i/--ipc            Run container in a new IPC namespace
+          -p/--pid            Run container in a new PID namespace (creates child)
+          --pwd               Initial working directory for payload process inside
+                              the container
+          -S/--scratch <path> Include a scratch directory within the container that
+                              is linked to a temporary dir (use -W to force location)
+          -s/--shell <shell>  Path to program to use for interactive shell
+          -u/--user           Try to run completely unprivileged (only works on very
+                              new kernels/distros)
+          -W/--workdir        Working directory to be used for /tmp, /var/tmp and
+                              $HOME (if -c/--contain was also used)
+          -w/--writable       By default all Singularity containers are available as
+                              read only. This option makes the file system accessible
+                              as read/write.
+
+           ...
+
+
+We first want to move the image back to our local machine, because we don't have sudo on our cluster. We then want to use the writable option:
+
+      sudo singularity shell --writable node6
+        Singularity: Invoking an interactive shell within container...
+
+        Singularity.node6> 
+
+Then we can make our changes, and move the image back onto the cluster.
+
+
 https://hub.docker.com/_/r-base/
 https://hub.docker.com/_/julia/
 https://hub.docker.com/_/clojure/
