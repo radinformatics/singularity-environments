@@ -3,7 +3,7 @@ From: python:3.5
 
 %runscript
 
-    exec /usr/local/bin/python
+    exec /usr/local/bin/python "$@"
 
 
 %post
