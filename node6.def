@@ -1,0 +1,16 @@
+Bootstrap: docker
+IncludeCmd: "yes"
+From: node:6
+
+%runscript
+
+    echo "Running node:"
+    exec /usr/local/bin/node
+
+%post
+
+    apt-get update
+    apt-get install -y vim
+    mkdir -p /scratch
+    mkdir -p /local-scratch
+    export PATH=/usr/local/bin:$PATH
