@@ -5,7 +5,7 @@ From: r-base:3.3.1
 %runscript
 
     echo "Running R"
-    exec /bin/R
+    exec /bin/R "$@"
 
 %post
 

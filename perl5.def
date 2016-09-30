@@ -5,7 +5,7 @@ From: perl:5
 %runscript
 
     echo "Running perl"
-    exec /usr/local/bin/perl
+    exec /usr/local/bin/perl "$@"
 
 %post
 

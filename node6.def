@@ -5,7 +5,7 @@ From: node:6
 %runscript
 
     echo "Running node:"
-    exec /usr/local/bin/node
+    exec /usr/local/bin/node "$@"
 
 %post
 
