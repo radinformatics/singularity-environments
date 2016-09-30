@@ -6,7 +6,7 @@ Token: no
 
 %runscript
  
-    exec /usr/bin/python
+    exec /usr/bin/python "$@"
 
 %post
 

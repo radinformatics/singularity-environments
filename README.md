@@ -122,6 +122,6 @@ We first want to move the image back to our local machine, because we don't have
 Then we can make our changes, and move the image back onto the cluster.
 
 
-https://hub.docker.com/_/r-base/
+### To add
 https://hub.docker.com/_/julia/
 https://hub.docker.com/_/clojure/
