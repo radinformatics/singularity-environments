@@ -21,11 +21,11 @@ You can then move right into building one or more containers, or optionally [cus
 
 ## Step 1. Build the Contained Environment
 
-First, you should use the provided build script to generate an executable for your environment:
+First, you should use the provided build script to generate an executable for your environment. For now, this means copying the build script into the folder you want (eg, `python/python3`) and then do:
 
       ./build.sh python3.def
 
-This will generate a python3 executable in the present working directory. If you want to change the size of the container, or add any custom arguments to the <a href="https://singularityware.github.io/docs-bootstrap" target="_blank">Singularity bootstrap</a> command, you can add them after your image name:
+This will generate a python3 executable in that directory. If you want to change the size of the container, or add any custom arguments to the <a href="https://singularityware.github.io/docs-bootstrap" target="_blank">Singularity bootstrap</a> command, you can add them after your image name:
 
       ./build.sh python3.def --size 786
 
@@ -34,6 +34,9 @@ Note that the maximum size, if not specified, is 1024*1024BMiB.
 ## Step 2. Transfer the contained environment to your cluster
 
 You are likely familiar with FTP, or hopefully your cluster uses a secure file transfer (sFTP). You can also use a command line tool [scp](https://www.garron.me/en/articles/scp.html). For the Sherlock cluster at Stanford, since I use Linux (Ubuntu), my preference is for [gftp](http://www.howtogeek.com/howto/ubuntu/install-and-use-the-gftp-client-on-ubuntu-linux/).
+
+### Likely to change
+The definition files are (likely) going to take on a common name, `Singularity` akin to a `Dockerfile` and we will have one per folder. For now we will maintain these names and build script.
 
 ## Step 3. Add the executable to your path
 

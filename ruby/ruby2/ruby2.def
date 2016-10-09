@@ -1,0 +1,10 @@
+Bootstrap: docker
+IncludeCmd: "yes"
+From: ruby:2.1
+
+%post
+
+    apt-get update
+    apt-get install -y vim
+    mkdir -p /scratch
+    mkdir -p /local-scratch

@@ -1,0 +1,13 @@
+Bootstrap: docker
+From: vanessa/miniconda3
+
+%runscript
+
+    # Using exec replaces pid in table
+    exec /usr/local/bin/python3
+
+
+%post
+    apt-get install vim
+    #/opt/conda/bin/conda install numpy -y --quiet
+    #/opt/conda/bin/conda install numpy -y --quiet

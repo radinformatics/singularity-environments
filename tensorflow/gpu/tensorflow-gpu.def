@@ -1,0 +1,11 @@
+Bootstrap: docker
+From: tensorflow/tensorflow:latest-gpu
+IncludeCmd: yes
+Registry: gcr.io
+Token: no
+
+%runscript
+ 
+    exec /usr/bin/python "$@"
+
+%post
